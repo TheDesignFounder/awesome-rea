@@ -1,8 +1,8 @@
 # Awesome REA [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-> A curated list of resources for [REA (Reverse Engineer Anything)](https://github.com/morluto/rea), the open-source MCP server and CLI that lets AI coding agents reverse engineer native binaries, Electron and JavaScript apps, .NET assemblies, Android APKs, firmware, network captures, and live app behavior.
+> A curated list of resources for REA (Reverse Engineer Anything), the open-source MCP server and CLI that lets AI coding agents reverse engineer native binaries, Electron and JavaScript apps, .NET assemblies, Android APKs, firmware, network captures, and live app behavior.
 
-REA connects agents such as Claude Code, Codex, Cursor, and Gemini CLI to reverse-engineering tools like Ghidra, Hopper, IDA, JADX, and Frida through the [Model Context Protocol](https://modelcontextprotocol.io/). Analysis runs on your own machine, and every finding comes with the evidence and limitations behind it.
+REA connects agents such as Claude Code, Codex, Cursor, and Gemini CLI to reverse-engineering tools like Ghidra, Hopper, IDA, JADX, and Frida through the Model Context Protocol (MCP). Analysis runs on your own machine, and every finding comes with the evidence and limitations behind it.
 
 ```bash
 npx rea-agents@latest setup
@@ -77,7 +77,7 @@ This list is community-maintained and not affiliated with the REA project. Contr
 - [Go binaries](https://github.com/morluto/rea/blob/main/docs/go-binaries.md) - Symbol recovery and runtime structures in Go executables.
 - [Rust binaries](https://github.com/morluto/rea/blob/main/docs/rust-binaries.md) - Working with Rust mangling and panics.
 - [Raw binary](https://github.com/morluto/rea/blob/main/docs/raw-binary.md) - Headerless images and unknown formats.
-- [WASM artifacts](https://github.com/morluto/rea/blob/main/docs/wasm-artifacts.md) - Inspecting WebAssembly modules.
+- [WebAssembly artifacts](https://github.com/morluto/rea/blob/main/docs/wasm-artifacts.md) - Inspecting WebAssembly modules.
 - [EVM bytecode](https://github.com/morluto/rea/blob/main/docs/evm-bytecode.md) - Smart contract bytecode analysis.
 - [Recorded crashes](https://github.com/morluto/rea/blob/main/docs/recorded-crashes.md) - Reading Linux crash recordings.
 - [Binary diagnostics](https://github.com/morluto/rea/blob/main/docs/binary-diagnostics.md) - Offline ELF layout and format checks.
@@ -135,7 +135,8 @@ This list is community-maintained and not affiliated with the REA project. Contr
 - [Reconstruction readiness](https://github.com/morluto/rea/blob/main/docs/reconstruction-readiness.md), [coverage](https://github.com/morluto/rea/blob/main/docs/reconstruction-coverage.md), and [obligation ledgers](https://github.com/morluto/rea/blob/main/docs/reconstruction-obligation-ledgers.md) - How REA tracks what a reconstruction still owes.
 - [Testing](https://github.com/morluto/rea/blob/main/docs/testing.md) - Test layout and how to run the suite.
 - [Migration to 6.2](https://github.com/morluto/rea/blob/main/docs/migration-6.2.md) - Breaking changes in the 6.x line.
-- [Contributing](https://github.com/morluto/rea/blob/main/CONTRIBUTING.md) and [Security policy](https://github.com/morluto/rea/blob/main/SECURITY.md).
+- [Contributing](https://github.com/morluto/rea/blob/main/CONTRIBUTING.md) - How to contribute to REA itself.
+- [Security policy](https://github.com/morluto/rea/blob/main/SECURITY.md) - Reporting vulnerabilities in REA.
 - [Does reverse engineering need a bigger model?](https://rea.tools/blog/reverse-engineering-models/) - Official blog, October 2026. Specialized versus general models, with compiler-feedback learning.
 - [The industrial revolution in reverse engineering](https://rea.tools/blog/touhou-reconstruction/) - Official blog, October 2026. Reconstructing TH04, TH08, and TH095 with agents and verification.
 
@@ -190,8 +191,3 @@ Engines and runtimes REA drives or complements.
 - [awesome-reversing](https://github.com/tylerha97/awesome-reversing) - General reverse engineering resources.
 - [awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers) - Other MCP servers.
 
-## License
-
-[![CC0](https://licensebuttons.net/p/zero/1.0/88x31.png)](https://creativecommons.org/publicdomain/zero/1.0/)
-
-To the extent possible under law, the contributors have waived all copyright and related rights to this work.
