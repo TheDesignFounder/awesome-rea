@@ -126,7 +126,32 @@ Projects whose README or author write-up credits REA for the investigation. List
 
 ### Often Mentioned with REA, but Not Built with It
 
-- [ArtCraft](https://github.com/storytold/artcraft) - The clean-room Rust suite of Adobe and Microsoft alternatives (PhotoCraft, WordCraft, FilmCraft, and others) is often reported as a REA project. Its author describes it as built from scratch without reverse engineering, and none of its repositories credit REA.
+The ArtCraft "Crafting Apps" by storytold are widely reported as REA projects because they launched in the same week. Their author describes them as clean-room reimplementations in pure Rust, written from scratch with Claude and without reverse engineering, and none of the repositories credit REA. They are listed here so readers looking for them get the facts. All are early alpha, dual-licensed MIT or Apache-2.0, and available from [getartcraft.com](https://getartcraft.com).
+
+Adobe alternatives:
+
+- [PhotoCraft](https://github.com/storytold/photocraft) - Photo editor in the style of Photoshop. The flagship, and the most-starred of the suite.
+- [VectorCraft](https://github.com/storytold/vectorcraft) - Vector art tool in the style of Illustrator.
+- [FilmCraft](https://github.com/storytold/filmcraft) - Nonlinear video editor in the style of Premiere Pro.
+- [LightCraft](https://github.com/storytold/lightcraft) - Non-destructive photo editor in the style of Lightroom.
+- [EffectCraft](https://github.com/storytold/effectcraft) - Motion graphics and compositing in the style of After Effects.
+- [DesignCraft](https://github.com/storytold/designcraft) - Page and layout design in the style of InDesign.
+- [PdfCraft](https://github.com/storytold/pdfcraft) - PDF reader and editor in the style of Acrobat.
+- [AniCraft](https://github.com/storytold/AniCraft) - 2D animation editor in the style of Animate.
+
+Microsoft Office alternatives:
+
+- [WordCraft](https://github.com/storytold/wordcraft) - Clean-room reimplementation of Word.
+- [GridCraft](https://github.com/storytold/gridcraft) - Clean-room spreadsheet in the style of Excel.
+- [DeckCraft](https://github.com/storytold/deckcraft) - Presentations and slide shows in the style of PowerPoint.
+
+Other professional tools:
+
+- [FigCraft](https://github.com/storytold/figcraft) - Interface design and prototyping in the style of Figma.
+- [CADCraft](https://github.com/storytold/cadcraft) - Computer-aided design and drafting in the style of AutoCAD.
+- [SoundCraft](https://github.com/storytold/soundcraft) - Digital audio workstation in the style of Avid Pro Tools.
+- [ArtCraft](https://github.com/storytold/artcraft) - The crafting engine the suite is built around, and the project's main repository.
+- [Craft Launcher](https://github.com/storytold/craft-launcher) - Installs and updates all of the apps above.
 
 ## Documentation by Target
 
