@@ -10,6 +10,8 @@ npx rea-agents@latest setup
 
 This list is community-maintained and not affiliated with the REA project. Contributions welcome, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
+> **Install only from the official sources.** Trojanized copies of REA have circulated under similar names. The real project is `morluto/rea` on GitHub and `rea-agents` on npm.
+
 > **Legal note.** REA is for lawful research and analysis of software you own or are authorized to examine. Commercial engines (IDA Pro, Hopper, JEB) require your own license.
 
 ## Contents
@@ -18,17 +20,27 @@ This list is community-maintained and not affiliated with the REA project. Contr
 - [Getting Started](#getting-started)
 - [Guides](#guides)
 - [Showcases and Case Studies](#showcases-and-case-studies)
+- [Built with REA](#built-with-rea)
+  - [Games and Reconstructions](#games-and-reconstructions)
+  - [Desktop Apps and Tools](#desktop-apps-and-tools)
+  - [Hardware, Drivers, and Protocols](#hardware-drivers-and-protocols)
+  - [Analyses, Audits, and Evaluations](#analyses-audits-and-evaluations)
+  - [Often Mentioned with REA, but Not Built with It](#often-mentioned-with-rea-but-not-built-with-it)
 - [Documentation by Target](#documentation-by-target)
   - [Native Binaries](#native-binaries)
   - [JavaScript, Electron, and Web](#javascript-electron-and-web)
   - [Mobile and Managed Code](#mobile-and-managed-code)
   - [Firmware, Hardware, and Runtime](#firmware-hardware-and-runtime)
 - [Integrations and Agent Setup](#integrations-and-agent-setup)
+  - [Tools Built on REA](#tools-built-on-rea)
+  - [Packaging](#packaging)
+  - [Agent Adapters](#agent-adapters)
 - [Architecture and Internals](#architecture-and-internals)
 - [Articles and Tutorials](#articles-and-tutorials)
 - [Reviews and Critical Takes](#reviews-and-critical-takes)
 - [Community](#community)
 - [Translations](#translations)
+- [Case Trackers and Other Lists](#case-trackers-and-other-lists)
 - [Related Tools](#related-tools)
 - [Related Awesome Lists](#related-awesome-lists)
 
@@ -67,6 +79,54 @@ This list is community-maintained and not affiliated with the REA project. Contr
 - [How Notion copies text and HTML](https://rea.tools/showcase/notion/) - Electron. Traces the clipboard bridge from renderer through preload and IPC to the main process.
 - [How TH04 aims a ring of bullets](https://rea.tools/showcase/th04/) - PC-98 DOS executable. Matches a 16-bit angle helper to readable C++ and compares against historical compiler output.
 - [All showcases](https://rea.tools/showcase/) - Index with evidence pages for each case.
+
+## Built with REA
+
+Projects whose README or author write-up credits REA for the investigation. Listing is not an endorsement, and most are early previews. Check each project's own notes on what was verified.
+
+### Games and Reconstructions
+
+- [dx-ball](https://github.com/N0zoM1z0/dx-ball) - The 1996 Windows game, version 1.07, reconstructed in C/C++ with REA and Codex, backed by original-x86 differential tests and byte-exact MSVC oracles.
+- [th04](https://github.com/N0zoM1z0/th04) - Source reconstruction of Touhou 4 (PC-98). The bullet-ring maths is the subject of the official TH04 showcase.
+- [desktop-games-nostalgia](https://github.com/ucodia/desktop-games-nostalgia) - The 2000 Gemtree desktop-smashing toy ported to macOS and the browser with REA and Ghidra.
+- [rea-ski-or-die-reconstruction](https://github.com/tuunanet/rea-ski-or-die-reconstruction) - The Snowball War minigame from Ski or Die (1990, MS-DOS) rebuilt in Rust and SDL2.
+- [OpenBattlefield2](https://github.com/Moxnatiy/OpenBattlefield2) - Clean-room C++20 reimplementation of the Refractor 2 engine. Uses REA for function-level evidence, credited in its agent instructions rather than the README.
+
+### Desktop Apps and Tools
+
+- [ledger-reborn](https://github.com/lxistired/ledger-reborn) - Desktop accounting app for Mac and Windows, independently implemented after a REA and Ghidra study of QuickBooks Desktop. Posted as [Project #000001](https://github.com/morluto/rea/discussions/2198).
+- [tax-reborn](https://github.com/lxistired/tax-reborn) - Offline US personal tax preparation for desktop and Android, with REA tracing the original calculation resources. Posted as [Project #000002](https://github.com/morluto/rea/discussions/3110).
+- [rea-capcut](https://github.com/Xiangyu-CAS/rea-capcut) - ReaCut, an open-source video editor built in Electron after REA-assisted research into CapCut's local behavior and project format.
+- [paper-rs](https://github.com/michaelshimeles/paper-rs) - Native Rust infinite-canvas design app, clean-room reimplementation studied with REA and Claude Code.
+- [rec-rs](https://github.com/michaelshimeles/rec-rs) - macOS screen and camera recorder in Rust, an OBS alternative studied with REA.
+- [terminal-rs](https://github.com/michaelshimeles/terminal-rs) - Bloomberg-style trading terminal in Rust, with chart behavior studied through REA's website mode.
+- [hexgrab](https://github.com/iammukeshm/hexgrab) - Tiny .NET 10 color picker for Windows, built from a REA study of the PowerToys Color Picker.
+- [AdamTerm](https://github.com/AdamLinCodes/AdamTerm) - Minimal macOS terminal built by pointing REA at Ghostty.
+- [vitals-clone](https://github.com/Samin12/vitals-clone) - SwiftUI menu-bar activity monitor rebuilt from a static REA analysis of the shipped Vitals app.
+- [rea-codex](https://github.com/victcn/rea-codex) - Static and binary source reconstruction of the OpenAI Codex CLI via REA.
+- [wispr-flow-rea-teardown](https://github.com/az9713/wispr-flow-rea-teardown) - Static teardown of Wispr Flow's voice pipeline plus a 64-line local rebuild with test receipts.
+- [ananasar](https://github.com/andy778/ananasar) - Rust port of the public-domain Ananas Modbus/TCP tool, built with REA.
+
+### Hardware, Drivers, and Protocols
+
+- [picoprint](https://github.com/bigtower17/picoprint) - Makes the LX-D02 Bluetooth thermal printer a regular Windows printer after recovering the app's CRC16 handshake from a Hermes bundle. Write-up in [discussion #4152](https://github.com/morluto/rea/discussions/4152).
+- [VSL-DSP](https://github.com/grisuno/VSL-DSP) - Linux kernel module for the PreSonus AudioBox VSL family, with some vendor-library findings from REA.
+- [vd-streamer-linux](https://github.com/cudanexus/vd-streamer-linux) - Unofficial Linux port of the Virtual Desktop Streamer for Quest, Pico, and Vive headsets, built with Claude Code and REA.
+
+### Analyses, Audits, and Evaluations
+
+- [OpenBSD_netcat_REA](https://github.com/NullLabTests/OpenBSD_netcat_REA) - Static analysis of the netcat-openbsd binary with REA and Ghidra, documented end to end.
+- [REA-demo](https://github.com/az9713/REA-demo) - REA reverse-engineering its own installed package, with the receipt.
+- [Outside-in leak check of a Next.js and Stripe app](https://github.com/morluto/rea/discussions/1406) - Black-box audit of a production portal with REA's browser tools. Found one real HTTPS issue.
+- [A stripped bzip2 build on Linux](https://github.com/morluto/rea/discussions/2254) - What REA returned on a stripped binary, checked against the build and the docs.
+- [rea-groundtruth](https://github.com/UnknownHacker1/rea-groundtruth) - Compares what REA reports against the actual code, with one-command repros for its blind spots.
+- [Benchmarks: REA on Linux](https://github.com/morluto/rea/discussions/1998) - Startup times on Node 22, 24, and 26 plus five local models.
+- [First speed results: kuna, rsleigh, and Ghidra](https://github.com/morluto/rea/discussions/3858) - Engine comparison on the same three files.
+- [anti-rea](https://github.com/848gaming/anti-rea) - Defensive toolkit that hardens Flutter, .NET, and Electron builds against REA-style analysis.
+
+### Often Mentioned with REA, but Not Built with It
+
+- [ArtCraft](https://github.com/storytold/artcraft) - The clean-room Rust suite of Adobe and Microsoft alternatives (PhotoCraft, WordCraft, FilmCraft, and others) is often reported as a REA project. Its author describes it as built from scratch without reverse engineering, and none of its repositories credit REA.
 
 ## Documentation by Target
 
@@ -127,6 +187,34 @@ This list is community-maintained and not affiliated with the REA project. Contr
 - [Reverse Engineer Anything skill on TypingMind](https://www.typingmind.com/skills/morluto-reverse-engineer-anything) - Skill packaging for other LLM frontends.
 - [A 32K local model drove REA over MCP](https://github.com/morluto/rea/discussions/3098) - Running REA with a small local model, 3 of 3 tasks with 10 tools.
 
+### Tools Built on REA
+
+- [eleven](https://github.com/Zfinix/eleven) - Agent-first reverse engineering for macOS, Windows, and Linux. Any ACP agent reads, renames, and patches binaries, with native code read by Ghidra through REA.
+- [reverseport](https://github.com/laaielichter/reverseport) - CLI and MCP server that takes apart apps and games and ports them to Godot, Unity, Unreal, or three.js.
+- [era-agent](https://github.com/dav1dngy/era-agent) - Evidence-driven reverse-engineering agent built on REA with a controlled Improvement Lab.
+- [ReaFuse](https://github.com/sickpyramid/ReaFuse) - Dissects two JS/TS projects with REA and fuses their capabilities into a new verified one.
+- [REA-Reconstruction-Companion](https://github.com/ShadowSwaps/REA-Reconstruction-Companion) - Model-independent agent skill for evidence-based software reconstruction with REA.
+- [rea-casebook](https://github.com/pablodiazjorge/rea-casebook) - Claude Code mod that keeps a live casebook of the evidence REA gives the agent, with Markdown export.
+- [CleanRoom](https://github.com/Sage-is/CleanRoom) - Python reimplementation of REA as a local MCP server and CLI with pageable evidence. AGPL-3.0.
+
+### Packaging
+
+- [rea-agent-docker](https://github.com/alexmi256/rea-agent-docker) - One Docker image per analysis engine (Ghidra, Hopper, IDA) with a full toolchain, MCP-ready.
+- [rea-flake](https://github.com/Fractal-Tess/rea-flake) - REA packaged for Nix.
+- [Homebrew formula](https://github.com/moonfruit/homebrew-tap/blob/main/Formula/rea-agents.rb) - Community tap for rea-agents.
+- [rea-installer](https://github.com/scottkw/rea-installer) - One-command install and clean uninstall of REA and its dependencies on macOS, Windows, and Linux.
+
+### Agent Adapters
+
+- [rea-mcp for LM Studio](https://github.com/Nowng/rea-mcp) - Wraps the REA MCP server as an LM Studio plugin.
+- [picode-rea](https://github.com/cognixws/picode-rea) - PiCode extension exposing REA's static tools.
+- [dsh-rea (Fanqi89)](https://github.com/Fanqi89/dsh-rea) - DeepSeek Harness bridge exposing all REA tools.
+- [dsh-plugin-rea](https://github.com/czcdr/dsh-plugin-rea) - DeepSeek Harness plugin that also prepares Node, the REA CLI, a JDK, and Ghidra.
+- [dsh-rea (zhaofeng130)](https://github.com/zhaofeng130/dsh-rea) - DeepSeek Harness adapter registering the REA skill and doctor tools.
+- [rea-dsh-plugin](https://github.com/ya123-4/rea-dsh-plugin) - DeepSeek Harness plugin bundling the MCP server and the agent skill in one install.
+- [dsh-rea-mcp](https://github.com/sheilacraig/dsh-rea-mcp) - Config-only DeepSeek Harness bundle, no plugin code.
+- [dsh-reverse-mode](https://github.com/xingxue-ux/dsh-reverse-mode) - DeepSeek Harness preset that mounts REA only in a dedicated reverse-engineering mode.
+
 ## Architecture and Internals
 
 - [Docs index](https://github.com/morluto/rea/blob/main/docs/index.md) - Entry point to all reference docs.
@@ -142,6 +230,18 @@ This list is community-maintained and not affiliated with the REA project. Contr
 
 ## Articles and Tutorials
 
+- [rea-cn](https://github.com/bbylw/rea-cn) - Chinese translation of the REA documentation and README.
+- [rea-research](https://github.com/ringozzt/rea-research) - Chinese. Deep technical survey of REA with sources graded as primary or secondary.
+- [Reverse-Engineer-Anything](https://github.com/valorisa/Reverse-Engineer-Anything) - French. Unofficial teaching guide to analyzing apps and binaries with REA.
+- [rea-engenharia-reversa](https://github.com/inematds/rea-engenharia-reversa) - Portuguese, English, and Spanish. REA explained with links, cases, and cautions.
+- [rea.run](https://rea.run/) - Unofficial bilingual community docs, source in [ylwl1997/rea-run](https://github.com/ylwl1997/rea-run).
+- [reatool](https://github.com/ZooHero500/reatool) - Unofficial tutorials and comparisons for installing REA with different coding agents.
+- [rea-lab](https://github.com/pablodiazjorge/rea-lab) - Verifying, measuring, and visualising the tools agents use with REA and Ghidra on Windows.
+- [rea-playbook](https://github.com/jinshi666888/rea-playbook) - Hands-on playbook with a minimal Electron target, an evidence extractor, and an MCP probe.
+- [REA explained](https://hoangyell.com/rea-explained/) - HoangYell. Plain-language introduction.
+- [REA: reverse engineering for coding agents](https://elsolitario.org/en/2026/10/10/rea-reverse-engineering-for-coding-agents/) - El Solitario. Getting-started guide.
+- [How To Use REA To Clone Any Software In Minutes](https://www.youtube.com/watch?v=FnB9tHKBJXQ) - Eric Tech. Video tutorial.
+- [Hacker News discussion](https://news.ycombinator.com/item?id=50028275) - Long thread on AI decompilation, preservation, and clean-room claims.
 - [Reverse Engineering with AI: Trace Electron and Native Apps](https://www.sitepoint.com/reverse-engineering-with-ai-rea-electron-tracing/) - SitePoint. Install, run `rea doctor`, and trace a feature from UI into native code.
 - [REA explained for AI coding agents](https://dev.to/daviddeng/rea-explained-for-ai-coding-agents-5g6j) - DEV Community. Walkthrough with advice to pin versions.
 - [REA: Let Your AI Agent Reverse Engineer the App Features You Wish You Had](https://dev.to/arshtechpro/rea-let-your-ai-agent-reverse-engineer-the-app-features-you-wish-you-had-3en7) - DEV Community.
@@ -174,6 +274,20 @@ This list is community-maintained and not affiliated with the REA project. Contr
 
 Official README translations in the repo: [简体中文](https://github.com/morluto/rea/blob/main/docs/readme/README_zh.md), [繁體中文](https://github.com/morluto/rea/blob/main/docs/readme/README_zh-TW.md), [日本語](https://github.com/morluto/rea/blob/main/docs/readme/README_ja.md), [한국어](https://github.com/morluto/rea/blob/main/docs/readme/README_ko.md), [Deutsch](https://github.com/morluto/rea/blob/main/docs/readme/README_de.md), [Español](https://github.com/morluto/rea/blob/main/docs/readme/README_es.md), [Français](https://github.com/morluto/rea/blob/main/docs/readme/README_fr.md), [Português (Brasil)](https://github.com/morluto/rea/blob/main/docs/readme/README_pt-BR.md), [Русский](https://github.com/morluto/rea/blob/main/docs/readme/README_ru.md), [Italiano](https://github.com/morluto/rea/blob/main/docs/readme/README_it.md), [Polski](https://github.com/morluto/rea/blob/main/docs/readme/README_pl.md), [Türkçe](https://github.com/morluto/rea/blob/main/docs/readme/README_tr.md), [Українська](https://github.com/morluto/rea/blob/main/docs/readme/README_uk.md), [Tiếng Việt](https://github.com/morluto/rea/blob/main/docs/readme/README_vi.md), [ไทย](https://github.com/morluto/rea/blob/main/docs/readme/README_th.md), [Bahasa Indonesia](https://github.com/morluto/rea/blob/main/docs/readme/README_id.md), [العربية](https://github.com/morluto/rea/blob/main/docs/readme/README_ar.md), [فارسی](https://github.com/morluto/rea/blob/main/docs/readme/README_fa.md), [Ελληνικά](https://github.com/morluto/rea/blob/main/docs/readme/README_el.md).
 
+## Case Trackers and Other Lists
+
+- [awesome-REA-cases](https://github.com/songshikang0111/awesome-REA-cases) - Chinese. Tracks public REA and AI reverse-engineering cases six times a day, deduplicated and categorised.
+- [rea-gems](https://github.com/sqwu/rea-gems) - Auto-updated gallery of REA cases, refreshed daily by GitHub Actions.
+- [rea-case-rankings](https://github.com/miles990/rea-case-rankings) - Daily scored ranking of REA cases, apps, and write-ups.
+- [awsome-REA](https://github.com/Asymmetrical-1024/awsome-REA) - Chinese. REA case collection with original posts, official evidence, and verification limits.
+- [awesome-REA (AIshihzong)](https://github.com/AIshihzong/awesome-REA) - AI reverse engineering and rebuilds, noting which ones really used REA.
+- [awesome-rea (kaixinbaba)](https://github.com/kaixinbaba/awesome-rea) - Open-source reimplementations and compatible alternatives with licenses and honest limits.
+- [awesome-rea (yibie)](https://github.com/yibie/awesome-rea) - AI-assisted decompilation, recompilation, and native ports, each with its acceptance test. Not REA-specific.
+- [awesome-ai-reverse-engineering](https://github.com/zhuyansen/awesome-ai-reverse-engineering) - AI reverse-engineering tools for coding agents, each read and security-graded.
+- [awesome-ai-reverse](https://github.com/DiscoverBox/awesome-ai-reverse) - Chinese. MCP servers, skills, plugins, and agents for AI-assisted reverse engineering.
+- [awesome-reverse-engineered-games](https://github.com/heaven-hm/awesome-reverse-engineered-games) - Games decompiled and rebuilt with AI models and agents.
+- [awesome-reverse-engineering](https://github.com/morluto/awesome-reverse-engineering) - By REA's author. General reverse-engineering tools and learning resources.
+
 ## Related Tools
 
 Engines and runtimes REA drives or complements.
@@ -184,6 +298,9 @@ Engines and runtimes REA drives or complements.
 - [JADX](https://github.com/skylot/jadx) - Dex to Java decompiler used for Android targets.
 - [Frida](https://github.com/frida/frida) - Dynamic instrumentation toolkit used for runtime hooks.
 - [Model Context Protocol](https://modelcontextprotocol.io/) - The protocol REA speaks to agents.
+- [ida-pro-mcp](https://github.com/mrexodia/ida-pro-mcp) - MCP server for IDA Pro, used by REA's IDA profile.
+- [ida-free-mcp](https://github.com/0xshlomil/ida-free-mcp) - Native MCP bridge for IDA Free.
+- [GhidraMCP](https://github.com/LaurieWired/GhidraMCP) - Peer MCP server for Ghidra. REA drives Ghidra directly instead.
 
 ## Related Awesome Lists
 
