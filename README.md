@@ -23,9 +23,9 @@ This list is community-maintained and not affiliated with the REA project. Contr
 - [Built with REA](#built-with-rea)
   - [Games and Reconstructions](#games-and-reconstructions)
   - [Desktop Apps and Tools](#desktop-apps-and-tools)
+  - [Creative and Office Suites](#creative-and-office-suites)
   - [Hardware, Drivers, and Protocols](#hardware-drivers-and-protocols)
   - [Analyses, Audits, and Evaluations](#analyses-audits-and-evaluations)
-  - [Often Mentioned with REA, but Not Built with It](#often-mentioned-with-rea-but-not-built-with-it)
 - [Documentation by Target](#documentation-by-target)
   - [Native Binaries](#native-binaries)
   - [JavaScript, Electron, and Web](#javascript-electron-and-web)
@@ -107,26 +107,9 @@ Projects whose README or author write-up credits REA for the investigation. List
 - [wispr-flow-rea-teardown](https://github.com/az9713/wispr-flow-rea-teardown) - Static teardown of Wispr Flow's voice pipeline plus a 64-line local rebuild with test receipts.
 - [ananasar](https://github.com/andy778/ananasar) - Rust port of the public-domain Ananas Modbus/TCP tool, built with REA.
 
-### Hardware, Drivers, and Protocols
+### Creative and Office Suites
 
-- [picoprint](https://github.com/bigtower17/picoprint) - Makes the LX-D02 Bluetooth thermal printer a regular Windows printer after recovering the app's CRC16 handshake from a Hermes bundle. Write-up in [discussion #4152](https://github.com/morluto/rea/discussions/4152).
-- [VSL-DSP](https://github.com/grisuno/VSL-DSP) - Linux kernel module for the PreSonus AudioBox VSL family, with some vendor-library findings from REA.
-- [vd-streamer-linux](https://github.com/cudanexus/vd-streamer-linux) - Unofficial Linux port of the Virtual Desktop Streamer for Quest, Pico, and Vive headsets, built with Claude Code and REA.
-
-### Analyses, Audits, and Evaluations
-
-- [OpenBSD_netcat_REA](https://github.com/NullLabTests/OpenBSD_netcat_REA) - Static analysis of the netcat-openbsd binary with REA and Ghidra, documented end to end.
-- [REA-demo](https://github.com/az9713/REA-demo) - REA reverse-engineering its own installed package, with the receipt.
-- [Outside-in leak check of a Next.js and Stripe app](https://github.com/morluto/rea/discussions/1406) - Black-box audit of a production portal with REA's browser tools. Found one real HTTPS issue.
-- [A stripped bzip2 build on Linux](https://github.com/morluto/rea/discussions/2254) - What REA returned on a stripped binary, checked against the build and the docs.
-- [rea-groundtruth](https://github.com/UnknownHacker1/rea-groundtruth) - Compares what REA reports against the actual code, with one-command repros for its blind spots.
-- [Benchmarks: REA on Linux](https://github.com/morluto/rea/discussions/1998) - Startup times on Node 22, 24, and 26 plus five local models.
-- [First speed results: kuna, rsleigh, and Ghidra](https://github.com/morluto/rea/discussions/3858) - Engine comparison on the same three files.
-- [anti-rea](https://github.com/848gaming/anti-rea) - Defensive toolkit that hardens Flutter, .NET, and Electron builds against REA-style analysis.
-
-### Often Mentioned with REA, but Not Built with It
-
-The ArtCraft "Crafting Apps" by storytold are widely reported as REA projects because they launched in the same week. Their author describes them as clean-room reimplementations in pure Rust, written from scratch with Claude and without reverse engineering, and none of the repositories credit REA. They are listed here so readers looking for them get the facts. All are early alpha, dual-licensed MIT or Apache-2.0, and available from [getartcraft.com](https://getartcraft.com).
+The ArtCraft "Crafting Apps" by storytold: Adobe, Microsoft Office, and other professional tools reimplemented in pure Rust with Claude, launched in the same week REA went viral. Note that the author describes them as clean-room work without reverse engineering and the repositories do not credit REA. All are early alpha, dual-licensed MIT or Apache-2.0, and available from [getartcraft.com](https://getartcraft.com).
 
 Adobe alternatives:
 
@@ -152,6 +135,23 @@ Other professional tools:
 - [SoundCraft](https://github.com/storytold/soundcraft) - Digital audio workstation in the style of Avid Pro Tools.
 - [ArtCraft](https://github.com/storytold/artcraft) - The crafting engine the suite is built around, and the project's main repository.
 - [Craft Launcher](https://github.com/storytold/craft-launcher) - Installs and updates all of the apps above.
+
+### Hardware, Drivers, and Protocols
+
+- [picoprint](https://github.com/bigtower17/picoprint) - Makes the LX-D02 Bluetooth thermal printer a regular Windows printer after recovering the app's CRC16 handshake from a Hermes bundle. Write-up in [discussion #4152](https://github.com/morluto/rea/discussions/4152).
+- [VSL-DSP](https://github.com/grisuno/VSL-DSP) - Linux kernel module for the PreSonus AudioBox VSL family, with some vendor-library findings from REA.
+- [vd-streamer-linux](https://github.com/cudanexus/vd-streamer-linux) - Unofficial Linux port of the Virtual Desktop Streamer for Quest, Pico, and Vive headsets, built with Claude Code and REA.
+
+### Analyses, Audits, and Evaluations
+
+- [OpenBSD_netcat_REA](https://github.com/NullLabTests/OpenBSD_netcat_REA) - Static analysis of the netcat-openbsd binary with REA and Ghidra, documented end to end.
+- [REA-demo](https://github.com/az9713/REA-demo) - REA reverse-engineering its own installed package, with the receipt.
+- [Outside-in leak check of a Next.js and Stripe app](https://github.com/morluto/rea/discussions/1406) - Black-box audit of a production portal with REA's browser tools. Found one real HTTPS issue.
+- [A stripped bzip2 build on Linux](https://github.com/morluto/rea/discussions/2254) - What REA returned on a stripped binary, checked against the build and the docs.
+- [rea-groundtruth](https://github.com/UnknownHacker1/rea-groundtruth) - Compares what REA reports against the actual code, with one-command repros for its blind spots.
+- [Benchmarks: REA on Linux](https://github.com/morluto/rea/discussions/1998) - Startup times on Node 22, 24, and 26 plus five local models.
+- [First speed results: kuna, rsleigh, and Ghidra](https://github.com/morluto/rea/discussions/3858) - Engine comparison on the same three files.
+- [anti-rea](https://github.com/848gaming/anti-rea) - Defensive toolkit that hardens Flutter, .NET, and Electron builds against REA-style analysis.
 
 ## Documentation by Target
 
