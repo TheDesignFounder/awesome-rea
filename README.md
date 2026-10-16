@@ -112,6 +112,7 @@ Projects whose README or author write-up credits REA for the investigation. List
 - [ananasar](https://github.com/andy778/ananasar) - Rust port of the public-domain Ananas Modbus/TCP tool, built with REA.
 - [open-obsidian](https://github.com/JingHao-Leon/open-obsidian) - Clean-room local-first Markdown vault with wikilinks, backlinks, graph view, and a plugin API, reverse-engineered with REA.
 - [rea-claude-code](https://github.com/victcn/rea-claude-code) - Static and runtime source reconstruction of Claude Code via REA.
+- [open-claude-ui](https://github.com/Caho1/open-claude-ui) - Chinese. High-fidelity recreation of the Claude design system and interaction behavior from a REA teardown.
 ### Creative and Office Suites
 
 The ArtCraft "Crafting Apps" by storytold: Adobe, Microsoft Office, and other professional tools reimplemented in pure Rust with Claude, launched in the same week REA went viral. Note that the author describes them as clean-room work without reverse engineering and the repositories do not credit REA. All are early alpha, dual-licensed MIT or Apache-2.0, and available from [getartcraft.com](https://getartcraft.com).
@@ -241,6 +242,7 @@ Other professional tools:
 - [rea-comfyui-bridge](https://github.com/chengyansen-ai/rea-comfyui-bridge) - REA investigations of creative apps paired with read-only ComfyUI workflow audits.
 - [rea-rs](https://github.com/jlien/rea-rs) - Clean-room Rust MCP toolkit for inspecting Mach-O, ELF, PE, and LE binaries.
 - [REA-Argonaut](https://github.com/PNWcoastie/REA-Argonaut) - Superset of REA with verified Rust reconstruction kits for Gemini and Google Antigravity.
+- [rea-investigate](https://github.com/Devaretanmay/rea-investigate) - Forensic investigator skill that works on source-level codebases and hands binary targets to REA.
 - [ai-reverse-engineering-agent-skill](https://github.com/dairymatrix-collab/ai-reverse-engineering-agent-skill) - Portable, evidence-first agent skill for lawful reverse engineering with REA CLI and MCP workflows.
 ### Packaging
 
@@ -264,6 +266,7 @@ Other professional tools:
 - [dsh-reverse-mode](https://github.com/xingxue-ux/dsh-reverse-mode) - DeepSeek Harness preset that mounts REA only in a dedicated reverse-engineering mode.
 - [dsh-rea (caixuf)](https://github.com/caixuf/dsh-rea) - DeepSeek Harness plugin covering native, APK, and web or Electron static tools.
 - [rea-reverse-engineering](https://github.com/Ydjin1984/rea-reverse-engineering) - Russian. ZCode plugin exposing a curated set of REA tools.
+- [dsh-mcp-rea](https://github.com/Ersith/dsh-mcp-rea) - Chinese. Thin MCP shell bridge for REA on DeepSeek Harness.
 - [rea-mcp-bridge](https://github.com/tororex250-ship-it/rea-mcp-bridge) - Spanish. Runs the REA MCP server in GitHub Codespaces for Gemini.
 ## Architecture and Internals
 
@@ -353,6 +356,7 @@ Engines and runtimes REA drives or complements.
 - [JADX](https://github.com/skylot/jadx) - Dex to Java decompiler used for Android targets.
 - [Frida](https://github.com/frida/frida) - Dynamic instrumentation toolkit used for runtime hooks.
 - [Model Context Protocol](https://modelcontextprotocol.io/) - The protocol REA speaks to agents.
+- [ida-mcp](https://github.com/HexRaysSA/ida-mcp) - Hex-Rays' official MCP server for IDA.
 - [ida-pro-mcp](https://github.com/mrexodia/ida-pro-mcp) - MCP server for IDA Pro, used by REA's IDA profile.
 - [ida-free-mcp](https://github.com/0xshlomil/ida-free-mcp) - Native MCP bridge for IDA Free.
 - [GhidraMCP](https://github.com/LaurieWired/GhidraMCP) - Peer MCP server for Ghidra. REA drives Ghidra directly instead.
